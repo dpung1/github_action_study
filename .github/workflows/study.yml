@@ -21,7 +21,8 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
-        run: chmod 777 ./mvnw
+        run: |
+            chmod 777 ./mvnw
             ./mvnw clean package -Dtestskip
 
 
