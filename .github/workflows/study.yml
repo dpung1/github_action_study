@@ -21,7 +21,8 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
-        run: ./mvnw clean package -Dtestskip
+        run: chmod 777 ./mvnw
+            ./mvnw clean package -Dtestskip
 
 
       - name: Login to DockerHub
