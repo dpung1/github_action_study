@@ -19,12 +19,12 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-
+          
+      - name: Permission Maven
+        run: chmod 777 ./mvnw
       - name: Build with Maven
-        run: |
-          chmod 777 ./mvnw
-          ./mvnw clean package -Dtestskip
-
+        run: ./mvnw clean package -Dtestskip
+      
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
